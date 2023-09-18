@@ -16,6 +16,7 @@ public class install extends BaseDriver {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(100,TimeUnit.SECONDS);
+		
 		driver.get(url);
 		 Dotenv dotenv = Dotenv.load();
 		 String Uname= dotenv.get("USER");

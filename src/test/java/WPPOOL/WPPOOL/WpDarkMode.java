@@ -21,6 +21,8 @@ public class WpDarkMode extends BaseDriver{
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(100,TimeUnit.SECONDS);
+		
+		
 		driver.get(url);
 		Thread.sleep(1000);
 		 Dotenv dotenv = Dotenv.load();
@@ -93,12 +95,13 @@ public class WpDarkMode extends BaseDriver{
 		 Select select =new Select(custompos);
 		 select.selectByValue("left_bottom");
 		 Thread.sleep(1000);
-		 WebElement saveswitch =driver.findElement(By.name("save_settings"));
-		 saveswitch.click();
 		 
+		 WebElement saveswitch =driver.findElement(By.xpath("//*[@id=\"save_settings\"]"));
+		 saveswitch.click();
+		 System.out.println("Switch Settings save successfully");
 		 Thread.sleep(1000);
 		 
-//		save_settings
+
 		 
 		 
 	
